@@ -8,6 +8,7 @@ const path = require('path');
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 3000 // heroku || local
 
 // Define path for Express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -86,8 +87,8 @@ app.get('*', (req, res) => {
         errorMessage: 'Page not found'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 
  
