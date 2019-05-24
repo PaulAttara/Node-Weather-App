@@ -1,3 +1,8 @@
 # Node-Weather-App
-Node weather app deployed with heroku
-npm install 
+
+To run locally:
+npm install, npm run start
+
+To view as website, visit: 
+https://attara-weather-application.herokuapp.com/
+
