@@ -16,10 +16,21 @@ const weather = (lattitude, longitude, callback) => {
             callback(body.error, undefined)
         }
         else{
-            callback(undefined, {
-                summary: body.daily.data[0].summary,
-                temperature: body.currently.temperature
-            })
+            callback(undefined, { 
+                summary:
+                body.daily.data[0].summary 
+                + '\nIt is currently ' + body.currently.temperature + '°C. '
+                + '\nThe high today is ' + body.daily.data[0].temperatureHigh
+                + ' with a low of ' + body.daily.data[0].temperatureLow + '. '
+                + '\nThere is a ' + body.currently.precipProbability + '% chance of rain.'
+            }
+                // {
+                // summary: body.daily.data[0].summary,
+                // temperature: body.currently.temperature,
+                // precipitationProbability: body.currently.precipProbability,
+                // windSpeed: body.currently.windSpeed
+                // }
+            )
         } 
     })
 }

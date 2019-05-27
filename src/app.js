@@ -9,6 +9,7 @@ const hbs = require('hbs')
 
 const app = express()
 const port = process.env.PORT || 3000 // heroku || local
+// to push to heroku, run this after git push: git push heroku master 
 
 // Define path for Express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -60,8 +61,7 @@ app.get('/weather', (req, res) => {
             }
             res.send({
                 location,
-                summary: weatherData.summary,
-                temperature: weatherData.temperature + '°C'
+                summary: weatherData.summary
             })
         });
     })
